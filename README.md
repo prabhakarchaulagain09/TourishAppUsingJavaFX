@@ -74,7 +74,6 @@ java -jar target/nepal-tourism-management-1.0.0.jar
 
 ## Project Structure
 
-\`\`\`
 src/
 ├── main/
 │   ├── java/
@@ -102,7 +101,6 @@ src/
 │       └── com/nepal/tourism/
 │           └── BookingTest.java            # JUnit tests
 └── pom.xml                                 # Maven configuration
-\`\`\`
 
 ## Core Features Details
 
