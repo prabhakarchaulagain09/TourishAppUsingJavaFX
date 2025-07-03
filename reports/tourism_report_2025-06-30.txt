@@ -1,0 +1,23 @@
+NEPAL TOURISM MANAGEMENT SYSTEM REPORT
+Generated on: 2025-06-30
+==================================================
+
+TOURIST STATISTICS:
+Total Tourists: 3
+  USA: 1
+  Japan: 1
+  UK: 1
+
+GUIDE STATISTICS:
+Total Guides: 3
+Average Experience: 11.666666666666666 years
+
+ATTRACTION STATISTICS:
+Total Attractions: 3
+  Trek: 2
+  Heritage: 1
+
+BOOKING STATISTICS:
+Total Bookings: 3
+Total Revenue: $3697.50
+  Confirmed: 3

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "B001",
+    "tourist": {
+      "id": "T001",
+      "name": "John Smith",
+      "nationality": "USA",
+      "contact": "+1-555-0123",
+      "emergencyContact": "+1-555-0124",
+      "email": "john@email.com",
+      "registrationDate": "2025-06-30"
+    },
+    "guide": {
+      "id": "G001",
+      "name": "Pemba Sherpa",
+      "languages": [
+        "English",
+        "Nepali",
+        "Tibetan"
+      ],
+      "experienceYears": 15,
+      "contact": "+977-98-1234-5678",
+      "specialization": "High Altitude Trekking",
+      "rating": 5.0,
+      "available": true
+    },
+    "attraction": {
+      "id": "A001",
+      "name": "Everest Base Camp Trek",
+      "type": "Trek",
+      "location": "Khumbu",
+      "difficulty": "Extreme",
+      "altitude": 5364,
+      "description": "World\u0027s highest base camp trek",
+      "price": 2500.0,
+      "monsoonRestricted": true
+    },
+    "bookingDate": "2025-06-30",
+    "trekDate": "2025-10-15",
+    "status": "Confirmed",
+    "totalPrice": 2125.0,
+    "festivalDiscount": true,
+    "weatherInfo": "Temperature: N/A°C\nCondition: Unable to fetch weather data\nHumidity: N/A%\nWind: N/A km/h\nVisibility: N/A km\n⚠️ Weather service unavailable. Please check your internet connection.\n\n🏔️ HIGH ALTITUDE WARNING:\nRisk of altitude sickness above 3000m. Acclimatization recommended.\nSymptoms: Headache, nausea, fatigue, dizziness.\nSeek immediate medical attention if symptoms worsen."
+  },
+  {
+    "id": "B002",
+    "tourist": {
+      "id": "T002",
+      "name": "Emma Wilson",
+      "nationality": "UK",
+      "contact": "+44-20-7946-0958",
+      "emergencyContact": "+44-20-7946-0959",
+      "email": "emma@email.com",
+      "registrationDate": "2025-06-30"
+    },
+    "guide": {
+      "id": "G002",
+      "name": "Ang Dorje",
+      "languages": [
+        "English",
+        "Nepali"
+      ],
+      "experienceYears": 12,
+      "contact": "+977-98-2345-6789",
+      "specialization": "Cultural Tours",
+      "rating": 5.0,
+      "available": true
+    },
+    "attraction": {
+      "id": "A002",
+      "name": "Annapurna Circuit",
+      "type": "Trek",
+      "location": "Annapurna",
+      "difficulty": "Hard",
+      "altitude": 5416,
+      "description": "Classic Himalayan circuit trek",
+      "price": 1800.0,
+      "monsoonRestricted": true
+    },
+    "bookingDate": "2025-06-30",
+    "trekDate": "2025-09-19",
+    "status": "Confirmed",
+    "totalPrice": 1530.0,
+    "festivalDiscount": true,
+    "weatherInfo": "Temperature: 22°C\nCondition: overcast clouds\nHumidity: 76%\nWind: 7 km/h\nVisibility: 10 km\n\n🏔️ HIGH ALTITUDE WARNING:\nRisk of altitude sickness above 3000m. Acclimatization recommended.\nSymptoms: Headache, nausea, fatigue, dizziness.\nSeek immediate medical attention if symptoms worsen."
+  },
+  {
+    "id": "B003",
+    "tourist": {
+      "id": "T003",
+      "name": "Hiroshi Tanaka",
+      "nationality": "Japan",
+      "contact": "+81-3-1234-5678",
+      "emergencyContact": "+81-3-1234-5679",
+      "email": "hiroshi@email.com",
+      "registrationDate": "2025-06-30"
+    },
+    "guide": {
+      "id": "G003",
+      "name": "Lakpa Sherpa",
+      "languages": [
+        "English",
+        "Nepali",
+        "Hindi"
+      ],
+      "experienceYears": 8,
+      "contact": "+977-98-3456-7890",
+      "specialization": "Adventure Sports",
+      "rating": 5.0,
+      "available": true
+    },
+    "attraction": {
+      "id": "A003",
+      "name": "Kathmandu Durbar Square",
+      "type": "Heritage",
+      "location": "Kathmandu",
+      "difficulty": "Easy",
+      "altitude": 1400,
+      "description": "UNESCO World Heritage Site",
+      "price": 50.0,
+      "monsoonRestricted": false
+    },
+    "bookingDate": "2025-06-30",
+    "trekDate": "2025-10-15",
+    "status": "Confirmed",
+    "totalPrice": 42.5,
+    "festivalDiscount": true,
+    "weatherInfo": "Temperature: 21°C\nCondition: overcast clouds\nHumidity: 96%\nWind: 2 km/h\nVisibility: 10 km"
+  }
+]

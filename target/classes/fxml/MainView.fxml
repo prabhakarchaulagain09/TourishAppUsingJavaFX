@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nepal.tourism.controller.MainController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="header">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         <Label styleClass="title" text="Nepal Tourism Management System" />
+         <Region HBox.hgrow="ALWAYS" />
+         <Button fx:id="languageToggleButton" onAction="#toggleLanguage" prefHeight="23.0" prefWidth="53.0" styleClass="language-button" text="नेपाली" />
+      </HBox>
+   </top>
+   <center>
+      <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+         
+         <!-- Tourist Management Tab -->
+         <Tab text="Tourists">
+            <VBox spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Tourist Management" />
+               
+               <GridPane hgap="10.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  
+                  <Label text="Tourist ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="touristIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  
+                  <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="touristNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  
+                  <Label text="Nationality:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <TextField fx:id="touristNationalityField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  
+                  <Label text="Contact:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <TextField fx:id="touristContactField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  
+                  <Label text="Emergency Contact:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="touristEmergencyField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  
+                  <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <TextField fx:id="touristEmailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+               </GridPane>
+               
+               <HBox spacing="10.0">
+                  <Button onAction="#addTourist" styleClass="primary-button" text="Add Tourist" />
+                  <Button onAction="#updateTourist" styleClass="secondary-button" text="Update Tourist" />
+                  <Button onAction="#deleteTourist" styleClass="danger-button" text="Delete Tourist" />
+               </HBox>
+               
+               <TableView fx:id="touristTable" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="touristIdColumn" prefWidth="100.0" text="ID" />
+                     <TableColumn fx:id="touristNameColumn" prefWidth="150.0" text="Name" />
+                     <TableColumn fx:id="touristNationalityColumn" prefWidth="120.0" text="Nationality" />
+                     <TableColumn fx:id="touristContactColumn" prefWidth="150.0" text="Contact" />
+                  </columns>
+               </TableView>
+            </VBox>
+         </Tab>
+         
+         <!-- Guide Management Tab -->
+         <Tab text="Guides">
+            <VBox spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Guide Management" />
+               
+               <GridPane hgap="10.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  
+                  <Label text="Guide ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="guideIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  
+                  <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="guideNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  
+                  <Label text="Languages (comma-separated):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <TextField fx:id="guideLanguagesField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  
+                  <Label text="Experience (years):" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <TextField fx:id="guideExperienceField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  
+                  <Label text="Contact:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="guideContactField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  
+                  <Label text="Specialization:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <TextField fx:id="guideSpecializationField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+               </GridPane>
+               
+               <HBox spacing="10.0">
+                  <Button onAction="#addGuide" styleClass="primary-button" text="Add Guide" />
+                  <Button onAction="#updateGuide" styleClass="secondary-button" text="Update Guide" />
+                  <Button onAction="#deleteGuide" styleClass="danger-button" text="Delete Guide" />
+               </HBox>
+               
+               <TableView fx:id="guideTable" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="guideIdColumn" prefWidth="100.0" text="ID" />
+                     <TableColumn fx:id="guideNameColumn" prefWidth="150.0" text="Name" />
+                     <TableColumn fx:id="guideExperienceColumn" prefWidth="100.0" text="Experience" />
+                     <TableColumn fx:id="guideSpecializationColumn" prefWidth="200.0" text="Specialization" />
+                  </columns>
+               </TableView>
+            </VBox>
+         </Tab>
+         
+         <!-- Attraction Management Tab -->
+         <Tab text="Attractions">
+            <VBox spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Attraction Management" />
+               
+               <GridPane hgap="10.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  
+                  <Label text="Attraction ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="attractionIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  
+                  <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="attractionNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  
+                  <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="attractionTypeCombo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  
+                  <Label text="Location:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <TextField fx:id="attractionLocationField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  
+                  <Label text="Difficulty:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="attractionDifficultyCombo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  
+                  <Label text="Altitude (m):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <TextField fx:id="attractionAltitudeField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  
+                  <Label text="Price ($):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <TextField fx:id="attractionPriceField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  
+                  <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                  <TextArea fx:id="attractionDescriptionArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+               </GridPane>
+               
+               <HBox spacing="10.0">
+                  <Button onAction="#addAttraction" styleClass="primary-button" text="Add Attraction" />
+                  <Button onAction="#updateAttraction" styleClass="secondary-button" text="Update Attraction" />
+                  <Button onAction="#deleteAttraction" styleClass="danger-button" text="Delete Attraction" />
+               </HBox>
+               
+               <TableView fx:id="attractionTable" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="attractionIdColumn" text="ID" />
+                     <TableColumn fx:id="attractionNameColumn" prefWidth="200.0" text="Name" />
+                     <TableColumn fx:id="attractionTypeColumn" prefWidth="100.0" text="Type" />
+                     <TableColumn fx:id="attractionLocationColumn" prefWidth="150.0" text="Location" />
+                     <TableColumn fx:id="attractionDifficultyColumn" prefWidth="100.0" text="Difficulty" />
+                  </columns>
+               </TableView>
+            </VBox>
+         </Tab>
+         
+         <!-- Booking Management Tab -->
+         <Tab text="Bookings">
+            <VBox spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Booking Management" />
+               
+               <GridPane hgap="10.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  
+                  <Label text="Booking ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="bookingIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  
+                  <Label text="Tourist:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="bookingTouristCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  
+                  <Label text="Guide:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="bookingGuideCombo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  
+                  <Label text="Attraction:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <ComboBox fx:id="bookingAttractionCombo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  
+                  <Label text="Trek Date:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="bookingDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  
+                  <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="bookingStatusCombo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  
+                  <Label text="Total Price:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <Label fx:id="bookingPriceLabel" styleClass="price-label" text="1200.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                  <Label text="Festival Discount:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                  <CheckBox fx:id="festivalDiscountCheck" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                  <Button fx:id="applyDiscountButton" onAction="#applyFestivalDiscount" styleClass="discount-button" text="Apply Discount" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+
+                  <!-- Festival Discount Label -->
+                  
+                  <Label fx:id="festivalDiscountLabel" styleClass="discount-label" text="Festival Discount Applied!" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+               </GridPane>
+               
+               <VBox spacing="5.0">
+                  <Label text="Weather Information:" />
+                  <HBox spacing="10.0">
+                     <TextArea fx:id="weatherInfoArea" prefHeight="116.0" prefRowCount="4" prefWidth="908.0" HBox.hgrow="ALWAYS" />
+                     <Button fx:id="getWeatherButton" onAction="#updateWeatherInfo" styleClass="weather-button" text="Get Weather" />
+                  </HBox>
+               </VBox>
+               
+               <HBox spacing="10.0">
+                  <Button onAction="#addBooking" styleClass="primary-button" text="Add Booking" />
+                  <Button onAction="#updateBooking" styleClass="secondary-button" text="Update Booking" />
+                  <Button onAction="#deleteBooking" styleClass="danger-button" text="Delete Booking" />
+               </HBox>
+               
+               <TableView fx:id="bookingTable" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="bookingIdColumn" text="ID" />
+                     <TableColumn fx:id="bookingTouristColumn" prefWidth="150.0" text="Tourist" />
+                     <TableColumn fx:id="bookingAttractionColumn" prefWidth="200.0" text="Attraction" />
+                     <TableColumn fx:id="bookingStatusColumn" prefWidth="100.0" text="Status" />
+                     <TableColumn fx:id="bookingPriceColumn" prefWidth="100.0" text="Price" />
+                  </columns>
+               </TableView>
+            </VBox>
+         </Tab>
+         
+         <!-- Analytics Tab -->
+         <Tab text="Analytics">
+            <VBox spacing="20.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Tourism Analytics" />
+               
+               <HBox spacing="20.0">
+                  <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                     <Label fx:id="totalTouristsLabel" styleClass="stat-label" text="Total Tourists: 0" />
+                     <Label fx:id="totalBookingsLabel" styleClass="stat-label" text="Total Bookings: 0" />
+                     <Label fx:id="totalRevenueLabel" styleClass="stat-label" text="Total Revenue: $0.00" />
+                     <Button onAction="#exportReport" styleClass="export-button" text="Export Report" />
+                  </VBox>
+               </HBox>
+               
+               <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                  <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                     <Label styleClass="chart-title" text="Tourists by Nationality" />
+                     <PieChart fx:id="nationalityChart" VBox.vgrow="ALWAYS" />
+                  </VBox>
+                  
+                  <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                     <Label styleClass="chart-title" text="Popular Attractions" />
+                     <BarChart fx:id="attractionChart" VBox.vgrow="ALWAYS">
+                        <xAxis>
+                           <CategoryAxis />
+                        </xAxis>
+                        <yAxis>
+                           <NumberAxis />
+                        </yAxis>
+                     </BarChart>
+                  </VBox>
+               </HBox>
+            </VBox>
+         </Tab>
+         
+         <!-- Emergency Management Tab -->
+         <Tab text="Emergency">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label styleClass="section-title" text="Emergency Management" />
+               
+               <VBox spacing="10.0" styleClass="emergency-section">
+                  <Label styleClass="emergency-title" text="Report Emergency" />
+                  
+                  <HBox spacing="10.0">
+                     <Label text="Select Booking:" />
+                     <ComboBox fx:id="emergencyBookingCombo" HBox.hgrow="ALWAYS" />
+                  </HBox>
+                  
+                  <VBox spacing="5.0">
+                     <Label text="Emergency Notes:" />
+                     <TextArea fx:id="emergencyNotesArea" prefRowCount="4" />
+                  </VBox>
+                  
+                  <Button onAction="#reportEmergency" styleClass="emergency-button" text="Report Emergency" />
+               </VBox>
+               
+               <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                  <Label styleClass="emergency-title" text="Emergency Log" />
+                  <ListView fx:id="emergencyLogList" VBox.vgrow="ALWAYS" />
+               </VBox>
+            </VBox>
+         </Tab>
+         
+      </TabPane>
+   </center>
+</BorderPane>
