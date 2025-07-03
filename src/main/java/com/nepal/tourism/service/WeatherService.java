@@ -8,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class WeatherService {
-    private static final String API_KEY = "e589adaace8affb09ab7f93e4d7cf4d9";
+    private static final String API_KEY = "Put-Key-Here";
     private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
     
     public static class WeatherInfo {
