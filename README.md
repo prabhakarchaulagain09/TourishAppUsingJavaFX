@@ -46,10 +46,10 @@ A comprehensive JavaFX desktop application designed to manage tourism operations
 ## Setup Instructions
 
 ### 1. Clone or Download the Project
-\`\`\`bash
+```bash
 git clone <repository-url>
 cd nepal-tourism-management
-\`\`\`
+```
 
 ### 2. Get Weather API Key
 1. Sign up at [OpenWeatherMap](https://openweathermap.org/api)
@@ -57,23 +57,23 @@ cd nepal-tourism-management
 3. Replace `your_openweather_api_key_here` in `WeatherService.java` with your actual API key
 
 ### 3. Build the Project
-\`\`\`bash
+```bash
 mvn clean compile
-\`\`\`
+```
 
 ### 4. Run the Application
-\`\`\`bash
+```bash
 mvn javafx:run
-\`\`\`
+```
 
 ### 5. Create Executable JAR
-\`\`\`bash
+```bash
 mvn clean package
 java -jar target/nepal-tourism-management-1.0.0.jar
-\`\`\`
+```
 
 ## Project Structure
-
+```
 src/
 ├── main/
 │   ├── java/
@@ -95,12 +95,13 @@ src/
 │       ├── fxml/
 │           └── MainView.fxml               # Main UI layout
 │           └── MainView_np.fxml            # Main UI layout in Nepali
-│           
+│
 ├── test/
 │   └── java/
 │       └── com/nepal/tourism/
 │           └── BookingTest.java            # JUnit tests
 └── pom.xml                                 # Maven configuration
+```
 
 ## Core Features Details
 
@@ -155,9 +156,9 @@ The application uses OpenWeatherMap API for weather data. To configure:
 1. Get API key from [OpenWeatherMap](https://openweathermap.org/api)
 2. Open `src/main/java/com/nepal/tourism/service/WeatherService.java`
 3. Replace the API_KEY constant:
-\`\`\`java
+```java
 private static final String API_KEY = "your_actual_api_key_here";
-\`\`\`
+```
 
 ## Data Storage
 
