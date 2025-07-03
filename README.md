@@ -47,8 +47,8 @@ A comprehensive JavaFX desktop application designed to manage tourism operations
 
 ### 1. Clone or Download the Project
 ```bash
-git clone <repository-url>
-cd nepal-tourism-management
+git clone https://github.com/prabhakarchaulagain09/TourishAppUsingJavaFX.git
+cd TourishAppUsingJavaFX
 ```
 
 ### 2. Get Weather API Key
@@ -69,7 +69,7 @@ mvn javafx:run
 ### 5. Create Executable JAR
 ```bash
 mvn clean package
-java -jar target/nepal-tourism-management-1.0.0.jar
+java -jar target/TourishAppUsingJavaFX-1.0.0.jar
 ```
 
 ## Project Structure
