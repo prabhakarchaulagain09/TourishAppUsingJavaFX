@@ -1,6 +1,8 @@
 # Nepal Tourism Management System
 
-A comprehensive JavaFX desktop application designed to manage tourism operations in Nepal, featuring weather integration, festival discounts, safety alerts, and multilingual support.
+A comprehensive JavaFX desktop application designed to manage tourism operations in Nepal, featuring weather integration, festival discounts, safety alerts, and multilingual support. If you are interested to know how this system works
+please visit 📖 [TechinicalStuff](/TourishAppUsingJavaFX/TECHNICAL_STUFF.md)
+
 
 ## Features
 
