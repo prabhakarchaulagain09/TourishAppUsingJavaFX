@@ -1,0 +1,198 @@
+classDiagram
+    %% Main Application
+    class TourismApp {
+        +start(Stage primaryStage)
+        +main(String[] args)
+    }
+
+    %% Model Classes
+    class Tourist {
+        -String id
+        -String name
+        -String nationality
+        -String contact
+        -String emergencyContact
+        -String email
+        -LocalDate registrationDate
+        +Tourist()
+        +Tourist(String id, String name, String nationality, String contact, String emergencyContact, String email)
+        +getId() String
+        +setId(String id)
+        +getName() String
+        +setName(String name)
+        +toString() String
+    }
+
+    class Guide {
+        -String id
+        -String name
+        -List~String~ languages
+        -int experienceYears
+        -String contact
+        -String specialization
+        -double rating
+        -boolean available
+        +Guide()
+        +Guide(String id, String name, List~String~ languages, int experienceYears, String contact, String specialization)
+        +getId() String
+        +setId(String id)
+        +getName() String
+        +setName(String name)
+        +getLanguages() List~String~
+        +setLanguages(List~String~ languages)
+        +toString() String
+    }
+
+    class Attraction {
+        -String id
+        -String name
+        -String type
+        -String location
+        -String difficulty
+        -int altitude
+        -String description
+        -double price
+        -boolean monsoonRestricted
+        +Attraction()
+        +Attraction(String id, String name, String type, String location, String difficulty, int altitude, String description, double price)
+        +getId() String
+        +setId(String id)
+        +getName() String
+        +setName(String name)
+        +getType() String
+        +setType(String type)
+        -updateMonsoonRestriction()
+        +toString() String
+    }
+
+    class Booking {
+        -String id
+        -Tourist tourist
+        -Guide guide
+        -Attraction attraction
+        -LocalDate bookingDate
+        -LocalDate trekDate
+        -String status
+        -double totalPrice
+        -boolean festivalDiscount
+        -String weatherInfo
+        -String emergencyNotes
+        +Booking()
+        +Booking(String id, Tourist tourist, Guide guide, Attraction attraction, LocalDate trekDate)
+        -calculateTotalPrice()
+        -isFestivalSeason() boolean
+        +getId() String
+        +setId(String id)
+        +getTourist() Tourist
+        +setTourist(Tourist tourist)
+        +toString() String
+    }
+
+    %% Controller
+    class MainController {
+        -ObservableList~Tourist~ tourists
+        -ObservableList~Guide~ guides
+        -ObservableList~Attraction~ attractions
+        -ObservableList~Booking~ bookings
+        -List~String~ emergencyLogs
+        -boolean isNepali
+        +initialize(URL location, ResourceBundle resources)
+        -initializeTableColumns()
+        -initializeComboBoxes()
+        -setupEventHandlers()
+        +addTourist()
+        +updateTourist()
+        +deleteTourist()
+        +addGuide()
+        +updateGuide()
+        +deleteGuide()
+        +addAttraction()
+        +updateAttraction()
+        +deleteAttraction()
+        +addBooking()
+        +updateBooking()
+        +deleteBooking()
+        +updateWeatherInfo()
+        -isMonsoonRestricted() boolean
+        -updateBookingPrice()
+        +reportEmergency()
+        -updateAnalytics()
+        +toggleLanguage()
+        +exportReport()
+        -showAlert(String title, String message)
+    }
+
+    %% Service Classes
+    class WeatherService {
+        -String API_KEY
+        -String BASE_URL
+        +getWeatherForLocation(String location) WeatherInfo
+        +getWeatherForAttraction(String attractionName, String location) WeatherInfo
+        -generateWeatherWarning(String temperature, String description, String windSpeed) String
+    }
+
+    class WeatherInfo {
+        -String temperature
+        -String description
+        -String humidity
+        -String windSpeed
+        -String visibility
+        -String warning
+        +WeatherInfo(String temperature, String description, String humidity, String windSpeed, String visibility, String warning)
+        +getTemperature() String
+        +getDescription() String
+        +toString() String
+    }
+
+    %% Utility Classes
+    class DataManager {
+        -String DATA_DIR
+        -String TOURISTS_FILE
+        -String GUIDES_FILE
+        -String ATTRACTIONS_FILE
+        -String BOOKINGS_FILE
+        -String REPORTS_DIR
+        -Gson gson
+        +saveTourists(ObservableList~Tourist~ tourists)
+        +loadTourists() List~Tourist~
+        +saveGuides(ObservableList~Guide~ guides)
+        +loadGuides() List~Guide~
+        +saveAttractions(ObservableList~Attraction~ attractions)
+        +loadAttractions() List~Attraction~
+        +saveBookings(ObservableList~Booking~ bookings)
+        +loadBookings() List~Booking~
+        +exportReport(ObservableList~Tourist~ tourists, ObservableList~Guide~ guides, ObservableList~Attraction~ attractions, ObservableList~Booking~ bookings)
+        -createDirectories()
+    }
+
+    class LocalDateAdapter {
+        +serialize(LocalDate src, Type typeOfSrc, JsonSerializationContext context) JsonElement
+        +deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) LocalDate
+    }
+
+    class LanguageStrings {
+        +getEnglishStrings() Map~String, String~
+        +getNepaliStrings() Map~String, String~
+    }
+
+    %% Relationships
+    TourismApp --> MainController : uses
+    MainController --> Tourist : manages
+    MainController --> Guide : manages
+    MainController --> Attraction : manages
+    MainController --> Booking : manages
+    MainController --> WeatherService : uses
+    MainController --> DataManager : uses
+    
+    Booking --> Tourist : contains
+    Booking --> Guide : contains
+    Booking --> Attraction : contains
+    
+    WeatherService --> WeatherInfo : creates
+    DataManager --> LocalDateAdapter : uses
+    DataManager --> Tourist : persists
+    DataManager --> Guide : persists
+    DataManager --> Attraction : persists
+    DataManager --> Booking : persists
+    
+    MainController --> LanguageStrings : uses

@@ -3,6 +3,30 @@
 A comprehensive JavaFX desktop application designed to manage tourism operations in Nepal, featuring weather integration, festival discounts, safety alerts, and multilingual support. If you are interested to know how this system works
 please visit 📖 [TechinicalStuff](https://github.com/prabhakarchaulagain09/TourishAppUsingJavaFX/blob/main/TECHNICAL_STUFF.md)
 
+## Application Screenshots
+
+### Main Dashboard
+![Main Dashboard](screenshots/main-dashboard.png)
+*The main dashboard provides quick access to all major features*
+
+### Tourist Management
+![Tourist Management](screenshots/tourist-management.png)
+*Interface for managing tourist information and emergency contacts*
+
+### Booking System with Weather Integration
+![Booking System](screenshots/booking-system.png)
+*Booking interface showing real-time weather data and festival discounts*
+
+### Analytics Dashboard
+![Analytics](screenshots/analytics-dashboard.png)
+*Comprehensive analytics showing tourist statistics and booking trends*
+
+### Multi-language Support
+| English Interface | Nepali Interface |
+|------------------|------------------|
+| ![English UI](screenshots/english-ui.png) | ![Nepali UI](screenshots/nepali-ui.png) |
+*The application supports both English and Nepali languages*
+
 
 ## Features
 
