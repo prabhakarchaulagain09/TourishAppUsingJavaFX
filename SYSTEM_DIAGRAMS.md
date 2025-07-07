@@ -339,4 +339,6 @@ classDiagram
     ObservableList~Booking~ ||--o{ Booking
     Guide ||--o{ String
     MainController ||--o{ String
+```
+
 
